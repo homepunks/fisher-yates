@@ -1,0 +1,11 @@
+[package]
+name = "fisher-yates"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "fisher-yates"
+path = "src/test.rs"
+
+[dependencies]
+rand = "0.9.2"
