@@ -1,13 +1,13 @@
 mod shuffle;
 
-use std::time::{Instant, Duration};
 use shuffle::{shuffle_fisher_yates, shuffle_rand_crate};
+use std::time::{Duration, Instant};
 
 fn main() {
     const SZ: usize = 67;
     let base: [usize; SZ] = core::array::from_fn(|i| i);
     println!("Sorted:   {:?}\n\n", base);
-   
+
     println!("<testing Fisher-Yates>");
     let mut array1 = base.clone();
     let dur1 = record_time(|| shuffle_fisher_yates(&mut array1));
@@ -15,7 +15,7 @@ fn main() {
     println!("Duration: {}", duration_str(dur1));
 
     println!();
-    
+
     println!("<testing rand crate>");
     let mut array2 = base.clone();
     let dur2 = record_time(|| shuffle_rand_crate(&mut array2));
